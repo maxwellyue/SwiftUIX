@@ -2,6 +2,7 @@
 // Copyright (c) Vatsal Manot
 //
 
+#if !targetEnvironment(macCatalyst)
 import Swift
 import SwiftUI
 import UniformTypeIdentifiers
@@ -49,3 +50,4 @@ public struct FileImportLink<Label: View>: View {
         }
     }
 }
+#endif
