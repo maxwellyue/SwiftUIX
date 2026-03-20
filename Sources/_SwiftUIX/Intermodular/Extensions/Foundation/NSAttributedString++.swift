@@ -10,10 +10,11 @@ import SwiftUI
 
 extension NSAttributedString {
     public var _isSingleTextAttachment: Bool {
-        guard length == 1, self.string.first! == Character(UnicodeScalar(NSTextAttachment.character)!) else {
+        guard length == 1,
+              self.string.unicodeScalars.first?.value == 0xFFFC
+        else {
             return false
         }
-        
         return true
     }
 }
